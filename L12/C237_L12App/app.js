@@ -10,48 +10,46 @@ app.set('view engine', 'ejs');
 // Middleware to parse request bodies
 app.use(express.urlencoded({ extended: true }));
 
-// In-memory array to store tasks
-let tasks = [];
+// In-memory array to store habits
+let habits = [];
 let nextId = 1;
 
-// GET - Home page: display all tasks
+// GET - Home page
 app.get('/', (req, res) => {
-    res.render('index', { tasks: tasks });
+    res.render('index');
 });
 
-// GET - Add task form
+// GET - Add habit form
 app.get('/add', (req, res) => {
     res.render('add');
 });
 
-// POST - Handle add task form submission
+// POST - Handle add habit form submission
 app.post('/add', (req, res) => {
-    const { title, description } = req.body;
-    tasks.push({ id: nextId++, title: title, description: description, done: false });
-    res.redirect('/');
+    const { name } = req.body;
+    const newHabit = { id: nextId++, name: name, done: false };
+    habits.push(newHabit);
+    res.render('confirm', { habitName: name });
 });
 
-// GET - Edit task form
-app.get('/edit/:id', (req, res) => {
-    const task = tasks.find(t => t.id === parseInt(req.params.id));
-    if (!task) return res.redirect('/');
-    res.render('edit', { task: task });
+// GET - View all habits
+app.get('/habits', (req, res) => {
+    res.render('habits', { habits: habits });
 });
 
-// POST - Handle edit task form submission
-app.post('/edit/:id', (req, res) => {
-    const task = tasks.find(t => t.id === parseInt(req.params.id));
-    if (task) {
-        task.title = req.body.title;
-        task.description = req.body.description;
+// POST - Mark habit as done
+app.post('/done/:id', (req, res) => {
+    const habit = habits.find(h => h.id === parseInt(req.params.id));
+    if (habit) {
+        habit.done = true;
     }
-    res.redirect('/');
+    res.redirect('/habits');
 });
 
-// POST - Delete a task
+// POST - Delete a habit
 app.post('/delete/:id', (req, res) => {
-    tasks = tasks.filter(t => t.id !== parseInt(req.params.id));
-    res.redirect('/');
+    habits = habits.filter(h => h.id !== parseInt(req.params.id));
+    res.redirect('/habits');
 });
 
 // Start the server

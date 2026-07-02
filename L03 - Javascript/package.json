@@ -1,0 +1,13 @@
+{
+  "name": "l03---javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "L03Exercises.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

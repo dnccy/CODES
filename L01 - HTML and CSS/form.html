@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self Introduction Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Self Introduction Form</h1>
+    <form action="#" method="post">
+        <!-- Name -->
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <!-- Gender -->
+        <label for="gender">Gender:</label><br>
+        <select id="gender" name="gender" required>
+            <option value="">--Select--</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br><br>
+
+        <!-- Email -->
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <!-- Phone Number -->
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <!-- Date of Birth -->
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" name="dob" required><br><br>
+
+        <!-- About Me -->
+        <label for="about">About Me:</label><br>
+        <textarea id="about" name="about" rows="4" cols="40"></textarea><br><br>
+
+        <!-- Extra: LinkedIn -->
+        <label for="linkedin">LinkedIn Profile:</label><br>
+        <input type="url" id="linkedin" name="linkedin"><br><br>
+
+        <!-- Extra: Upload Profile Picture -->
+        <label for="profile">Upload Profile Picture:</label><br>
+        <input type="file" id="profile" name="profile" accept="image/*"><br><br>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit">
+    </form>
+      <p> <a href="selfintro.html" target="_blank">
+                Go Back
+            </a></p>
+</body>
+</html>

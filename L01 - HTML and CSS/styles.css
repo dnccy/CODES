@@ -1,0 +1,34 @@
+/* Apply Arial font to the whole page */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Make all h1 headings blue */
+h1 {
+    color: blue;
+}
+
+/* Set background color of the module list in SelfIntro.html */
+#modules {
+    background-color: lightgrey;
+    padding: 10px;
+}
+
+/* Change link color when hovered */
+a:hover {
+    color: red; /* you can choose any color */
+}
+
+/* Attribute selector for submit button */
+input[type="submit"] {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+/* Optional: make submit button change slightly on hover */
+input[type="submit"]:hover {
+    background-color: darkorange;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Packing List</title>
+</head>
+<body>
+    <h1>Travel Packing List</h1>
+    <table border="1">
+        <tr>
+            <th>Clothes</th>
+            <th>Toiletries</th>
+        </tr>
+        <tr>
+            <td>
+                <ol>
+                    <!-- Display clothesList items using for loop -->
+                    <% clothesList.forEach((item) => { %>
+                        <li><%= item %></li>
+                    <% }) %>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                    <!-- Display toiletriesList items using for loop -->
+                    <% toiletriesList.forEach((item) => { %>
+                        <li><%= item %></li>
+                    <% }) %>
+                </ol>
+            </td>
+        </tr>
+    </table>
+
+    <h1>Add Item</h1>
+    <form action="/addItem" method="POST">
+        Item: <input type="text" name="item" required>
+        <br><br>
+        Category:
+        <select name="category" required>
+            <option value="clothes">Clothes</option>
+            <option value="toiletries">Toiletries</option>
+        </select>
+        <br><br>
+        <button type="submit">Add to List</button>
+    </form>
+</body>
+</html>

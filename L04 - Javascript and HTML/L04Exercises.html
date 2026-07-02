@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L04 Exercises</title>
+</head>
+<body>
+    <h1 id="message">Welcome</h1>
+    <!-- ex2 add button to call function when clicked -->
+    <button onclick="showMessage()">Click Me</button>
+    <!-- ex3 add button to call function when clicked -->
+    <button onclick="changecolor()">Change Text Color</button>
+     <!-- ex4  -->
+    <br><br>Name:<input id="name">
+    <button onclick="showName()">Submit</button>
+
+
+    <script>
+        //Ex1 change Welcome to "Hello Students"
+        document.getElementById("message").innerText = "Hello Students!";
+
+        //Ex2 define function that display pop message "Welcome to C237!"
+        function showMessage(){
+            alert("Welcome to C237!")
+        }
+
+        //Ex3 define function to change text color to blue
+        function changecolor(){
+            document.getElementById("message").style.color="blue"};
+
+        //Ex 4 + Additional Challenges
+        function showName(){
+            let name = document.getElementById("name").value.trim();
+            if(name===""){
+                alert("Please enter name!")}
+            else{
+            document.getElementById("message").innerText = "Hi " + name + ", welcome!"
+            alert("Hi " + name + ", welcome!");
+        }}
+
+    </script>
+</body>
+</html>

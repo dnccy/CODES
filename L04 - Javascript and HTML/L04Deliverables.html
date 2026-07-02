@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+</head>
+<body>
+    <h1>Counter App</h1>
+    <h2 id="number">0</h2>
+     <button onclick="addone()">+</button>
+     <button onclick="minusone()">-</button>
+
+     <script>
+        let number = 0;
+        function addone(){
+            number+=1
+            document.getElementById("number").innerText = number
+        }
+
+        function minusone(){
+            number+=-1
+            document.getElementById("number").innerText = number
+        }
+     </script>
+    
+</body>
+</html>
